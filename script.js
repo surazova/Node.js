@@ -1,8 +1,24 @@
-//Lesson 3 of Node.js 
-//All about the v8 engine
-//A JS enginge takes Javascript and changes the code into machine code-something that the computer can understand. 
-//Machine code order: Javascript, C++, Assembly language, Machine Code 
-//Node.js is written in C++
-//V8 is imbedded into node.js 
-//When you pass the JS, it's changed into machine code
-//Node.js with V8: JavaScript-->C++, Node.js, V8-->Machine Code 
+//Lesson 4 of Node.js 
+//The global object is the window object in the browser 
+console.log('hello');
+//types node script to run the application 
+setTimeout(function(){
+    console.log('3 seconds have passed');
+    
+}, 3000);
+//Save, run, and then type "node script"
+
+var time = 0;
+var timer = setInterval(function(){
+    time += 2;
+    console.log(time + '2 seconds have passed');
+    if (time > 5){
+        clearInterval(timer); //This sets when the time is going to clear 
+    }
+    
+}, 2000);
+//Save, run, and then type "node script"
+//"click COMMAND + C" to stop the application from running 
+
+console.log(__dirname); //tells you which directory you are in 
+console.log(__filename); //tells you the filename that you are in 

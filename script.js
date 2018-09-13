@@ -1,6 +1,16 @@
-//Lesson 13 Node.js 
-//Creating streams 
-//Buffer: a temporary storage spot for data that is being transferred 
-//the buffer is filled with data 
-//Stream: data that flows in time into the buffer, that collects small chunks of data, then it gets sent to the clients 
-//Streams in node.js can increase performance and transfer data
+//Lesson 14 Node.js 
+//Streams:
+//Writable streams: allow node js to write data to a strem 
+//readable streams: allow node js to read data from a stream 
+//duplex: can read and write to a stream
+
+var http = require('http');
+var fs = require('fs');
+
+
+var myReadStream = fs.createReadStream(__dirname + '/readMe.txt', 'utf8');
+
+myReadStream.on('data', function(chunk){
+    console.log('new chunk received:');
+    console.log(chunk);
+});

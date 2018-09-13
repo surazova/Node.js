@@ -1,27 +1,28 @@
-//Lesson 9 node.js 
-//Reading and Writing Files 
+//Lesson 10 Node.js 
+//Creating and moving directories 
 
 var fs = require('fs');
 
-var readMe = fs.readFileSync('readME.txt', 'utf8' );  //This is blocking code-it will read first before starting anything else. When you read a file, it is in binary 
-//utf8 changes the code to binary, so the computer can read it
-console.log(readMe); //You are retrieving the variable, so that you can read it 
+//fs.unlink('writeME.txt'); //deletes the file 
 
 
-//second method: 
-var readMe = fs.readFileSync('readME.txt', 'utf8');
-fs.writeFileSync('writeME.txt', readMe);
+//creating directories 
 
-//third method: 
-fs.readFile('readME.txt', 'utf8', function(err, data){  //This is better because it is non-blocking 
-    console.log(data);
+//synchronously 
+
+//fs.mkdirSync('stuffB');  //creates the directory
+
+//fs.rmdirSync('stuffB'); //deletes the directory
+
+//asynchronously 
+//fs.mkdir('stuffB', function(){
+//    fs.readFile('readME.txt', 'utf8', function(err, data) {
+//        fs.writeFile('./stuffB/writeME.txt', data);
+//    });
+//});   //when you push asynchronously, you need a function 
+
+
+fs.unlink('./stuffB/writeME.txt', function(){
+    fs.rmdir('stuffB');
+
 });
-    
-    console.log('test');  //Test will run first, because non-blocking (or asynchronous) good for if you have mutlipel requests on your website
-    
-    
-//Writing, non-blocking: 
-fs.readFile('readME.txt', 'utf8', function(err, data){
-    fs.writeFile('writeME.txt', data);
-});
-

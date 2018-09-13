@@ -1,42 +1,27 @@
-//Lesson 8 node.js 
-//The Event module 
+//Lesson 9 node.js 
+//Reading and Writing Files 
 
-var events = require('events');  //require a core module, you only need the name of it. Whatever is returned, will be stored in events
+var fs = require('fs');
 
-//you can create a custom emmiter 
+var readMe = fs.readFileSync('readME.txt', 'utf8' );  //This is blocking code-it will read first before starting anything else. When you read a file, it is in binary 
+//utf8 changes the code to binary, so the computer can read it
+console.log(readMe); //You are retrieving the variable, so that you can read it 
 
-var myEmitter = new events.EventEmitter(); //EventEmitter is capital!
 
-myEmitter.on('someEvent', function(mssg){
-    console.log(mssg);
+//second method: 
+var readMe = fs.readFileSync('readME.txt', 'utf8');
+fs.writeFileSync('writeME.txt', readMe);
+
+//third method: 
+fs.readFile('readME.txt', 'utf8', function(err, data){  //This is better because it is non-blocking 
+    console.log(data);
+});
+    
+    console.log('test');  //Test will run first, because non-blocking (or asynchronous) good for if you have mutlipel requests on your website
+    
+    
+//Writing, non-blocking: 
+fs.readFile('readME.txt', 'utf8', function(err, data){
+    fs.writeFile('writeME.txt', data);
 });
 
-myEmitter.emit('someEvent', 'the event was emitted');
-
-
-//second example:
-
-var events = require('events');
-
-var util = require('util');
-
-
-var Person = function(name) {
-    this.name = name; 
-};
-
-util.inherits(Person, events.EventEmitter);
-
-var james = new Person ('james');
-var mary = new Person('mary');
-var bob = new Person('Bob');
-var people = [james, mary, bob];
-
-people.forEach(function(person){
-   person.on('speak', function(mssg){
-       console.log(person.name + ' said: ' + mssg);
-   }); 
-});
-
-james.emit('speak', 'hey dudes');
-mary.emit('speak', 'wassap');

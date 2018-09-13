@@ -1,28 +1,16 @@
-//Lesson 10 Node.js 
-//Creating and moving directories 
+//Lesson 11 Node.js 
+//Clients and Servers 
+//A client sends a request to a server and the server sends a response to the client 
 
-var fs = require('fs');
+//You use protocols to communicate 
+//Protocols are a set of rules that two sides agree with in oder to communicate 
+//FTP (file transfer protocol)
+//HTTP (Used for websites)
+//When the structure is decided, the information is sent 
+//Then TCP is used, which splits the data into small sections called packets 
+//Node.js allows us to open the connection between computers 
+//We tell node.js what information we want to respond to
 
-//fs.unlink('writeME.txt'); //deletes the file 
+//Ports 
+//If node.js is litening to requests in a particular port, what comes there will be read by node 
 
-
-//creating directories 
-
-//synchronously 
-
-//fs.mkdirSync('stuffB');  //creates the directory
-
-//fs.rmdirSync('stuffB'); //deletes the directory
-
-//asynchronously 
-//fs.mkdir('stuffB', function(){
-//    fs.readFile('readME.txt', 'utf8', function(err, data) {
-//        fs.writeFile('./stuffB/writeME.txt', data);
-//    });
-//});   //when you push asynchronously, you need a function 
-
-
-fs.unlink('./stuffB/writeME.txt', function(){
-    fs.rmdir('stuffB');
-
-});

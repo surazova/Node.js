@@ -1,6 +1,4 @@
-//Lesson 16 node.js
-//Pipes Order: Read Stream, buffer, read stream, write stream 
-//Sends html file to the browser, instead of plain text.
+//Lesson 18 node.js
 
 var http = require('http');
 var fs = require('fs');
@@ -8,8 +6,13 @@ var fs = require('fs');
 
 var server = http.createServer(function(req, res) {
     console.log('request was made: ' + req.url);
-    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.writeHead(200, {'Content-Type': 'application/json'});
     
+    var myObj = {
+        name: 'Ryu',
+        job: 'Ninja',
+        age: 29
+    };
     
     var myReadStream = fs.createReadStream(__dirname + '/index.html', 'utf8');
 

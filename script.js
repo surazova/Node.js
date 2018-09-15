@@ -1,19 +1,24 @@
-//Lesson 24 node.js 
-//ROute Parameters
-
+//Lesson 25 node.js 
+//Templating Engines: you can imbed data into the html files (dynamic content)
+//EJS combines data and a template to produce HTML. 
 
 var express = require('express');
 
 var app = express();
+
+app.set('view engine', 'ejs');
+
 app.get('/', function(req,res){
-   res.send('this is the homepage'); //express figures out the content type automatically 
+   res.sendFile(__dirname + '/index.html'); //express figures out the content type automatically 
 });
 app.get('/contact', function(req,res){
-   res.send('this is the contact page'); 
+   res.sendFile(__dirname + '/contact.html');
 });
 
-app.get('/profile/:id', function(req,res){  //you can access this parameter id is a number 
-    res.send('You requested to see a profile with the id of ' + req.params.id);
+app.get('/profile/:name', function(req,res){  //you can access this parameter id is a number 
+var data = {age: 29, job: 'ninja'};
+res.render('profile', {person: req.params.name, data: data});
+    
 });
 
 

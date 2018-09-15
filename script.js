@@ -1,6 +1,9 @@
-//Lesson 21 node.js
-//The package.json file (keeps track of all files you installed, already created when you init npm)
-//to install express: npm install express -save 
+//Lesson 22 node.js
+//Installing nodemon
+//the file monitors your applications and resets the server automatically 
+//npm install -g nodemon (globally insalled on your computer)
+//tracks what you do with the file 
+//to run: type nodemon script.js
 
 var http = require('http');
 var fs = require('fs');

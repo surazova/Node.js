@@ -1,9 +1,6 @@
-//Lesson 20 node.js
-//The Node Package Manager (npm)
-//Helps to create web applciations in node, much faster thatn lesson 19 
-//3rd party packages on modules 
-//You load the package, and use its functionality 
-
+//Lesson 21 node.js
+//The package.json file (keeps track of all files you installed, already created when you init npm)
+//to install express: npm install express -save 
 
 var http = require('http');
 var fs = require('fs');

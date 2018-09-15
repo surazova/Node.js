@@ -1,5 +1,6 @@
-//Lesson 26 node.js 
-//Templating Engines part 2
+//Lesson 27 node.js 
+//Partial Views 
+//Make a partial template for the navigation 
 
 var express = require('express');
 
@@ -8,10 +9,10 @@ var app = express();
 app.set('view engine', 'ejs');
 
 app.get('/', function(req,res){
-   res.sendFile(__dirname + '/index.html'); //express figures out the content type automatically 
+   res.render('index'); //change send file to render because you already created the partial views
 });
 app.get('/contact', function(req,res){
-   res.sendFile(__dirname + '/contact.html');
+   res.render('contact');
 });
 
 app.get('/profile/:name', function(req,res){  //you can access this parameter id is a number 
@@ -34,3 +35,4 @@ app.listen(process.env.PORT, process.env.IP, 3000);
 
 
 //the site: https://github-surazova.c9users.io/
+//to restartd nodemon, type 'rs'

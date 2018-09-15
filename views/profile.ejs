@@ -8,6 +8,9 @@
         p, li{font-size: 50px; text-align: center;}
     </style>
     <body>
+        
+        <!-- Add in the partial view page that you just made-->
+        <% include partial/nav.ejs %>
         <hi>Welcome to the profile of <%= person %> </hi>
         <p><strong>Age: </strong><%= data.age %></p>
         <p><strong>Job: </strong><%= data.job %></p>

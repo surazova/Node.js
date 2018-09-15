@@ -1,5 +1,9 @@
-//Lesson 19 node.js
-//Basic Routing 
+//Lesson 20 node.js
+//The Node Package Manager (npm)
+//Helps to create web applciations in node, much faster thatn lesson 19 
+//3rd party packages on modules 
+//You load the package, and use its functionality 
+
 
 var http = require('http');
 var fs = require('fs');

@@ -1,0 +1,25 @@
+{
+  "name": "github-surazova.c9users.io",
+  "version": "1.0.0",
+  "description": "Node.js Running Application Test 1",
+  "main": "express.js",
+  "scripts": {
+    "test": "node express.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/surazova/Node.js.git"
+  },
+  "keywords": [
+    "Node.js"
+  ],
+  "author": "Sitora Urazova",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/surazova/Node.js/issues"
+  },
+  "homepage": "https://github.com/surazova/Node.js#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}

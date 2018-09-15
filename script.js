@@ -1,6 +1,5 @@
-//Lesson 25 node.js 
-//Templating Engines: you can imbed data into the html files (dynamic content)
-//EJS combines data and a template to produce HTML. 
+//Lesson 26 node.js 
+//Templating Engines part 2
 
 var express = require('express');
 
@@ -16,9 +15,8 @@ app.get('/contact', function(req,res){
 });
 
 app.get('/profile/:name', function(req,res){  //you can access this parameter id is a number 
-var data = {age: 29, job: 'ninja'};
+var data = {age: 29, job: 'ninja', hobbies: ['eating', 'fighting', 'fishing']};
 res.render('profile', {person: req.params.name, data: data});
-    
 });
 
 

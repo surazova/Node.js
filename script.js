@@ -1,9 +1,5 @@
-//Lesson 23 node.js 
-//introduction to express
-
-//Express: easy and flexible routing system 
-//integrates with many templating designs 
-//contains middleware framework (that other node packages can plug into)
+//Lesson 24 node.js 
+//ROute Parameters
 
 
 var express = require('express');
@@ -15,6 +11,12 @@ app.get('/', function(req,res){
 app.get('/contact', function(req,res){
    res.send('this is the contact page'); 
 });
+
+app.get('/profile/:id', function(req,res){  //you can access this parameter id is a number 
+    res.send('You requested to see a profile with the id of ' + req.params.id);
+});
+
+
 app.listen(process.env.PORT, process.env.IP, 3000);
 
 

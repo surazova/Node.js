@@ -1,12 +1,15 @@
-//Lesson 27 node.js 
-//Partial Views 
-//Make a partial template for the navigation 
+//Lesson 28 node.js 
+//Serving Static Files (%Middleware)
+//Middleware_ the code that uns between the request and the response 
 
 var express = require('express');
 
 var app = express();
 
 app.set('view engine', 'ejs');
+app.use('/assets', express.static('assets')); //exoress knows to use the file that is inside assets 
+
+
 
 app.get('/', function(req,res){
    res.render('index'); //change send file to render because you already created the partial views
@@ -22,7 +25,6 @@ res.render('profile', {person: req.params.name, data: data});
 
 
 app.listen(process.env.PORT, process.env.IP, 3000);
-
 
 
 

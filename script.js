@@ -1,8 +1,5 @@
-//Lesson 30 node.js 
-//POST requests 
-//POST is a request method 
-//POST requests, asks the server to accept/store data which is enclosed in the body of the request 
-//Often used when submitting forms 
+//Lesson 31 node.js 
+//Making a To-do app (part 1) 
 
 
 var express = require('express');

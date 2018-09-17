@@ -2,7 +2,7 @@ module.exports = function(app){ //sets up the request handlers
     
     
 app.get('/todo', function(req,res){
-    
+    res.render('todo');
     
 });
 

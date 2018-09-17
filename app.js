@@ -2,7 +2,7 @@
 //Making a todo=app part 3
 
 var express = require('express');
-var todoController = require('./controllers/todoController');
+var todoController = require('./Controllers/todoController');
 
 var app = express();
 
@@ -10,11 +10,13 @@ var app = express();
 app.set('view engine', 'ejs');
 
 //static files 
-app.use(express.static('./todo-list'));
+//app.use(express.static('./Todo-list'));
+app.use('/assets', express.static('assets'));   //middleware
+
 
 
 //fire controllers 
-todoController();
+todoController(app);
 
 //listen to port 
 app.listen(process.env.PORT, process.env.IP, 3000);

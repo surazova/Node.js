@@ -1,6 +1,5 @@
-//Lesson 36 node.js 
-//Crate and connect to NoSQL database
-//install mongoose 
+//Lesson 37 node.js 
+//Last part of todo list 
 
 var express = require('express');
 var todoController = require('./Controllers/todoController');

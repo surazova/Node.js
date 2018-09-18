@@ -1,6 +1,8 @@
-//Lesson 34 node.js
-//Making a todo=app part 4
-
+//Lesson 35 node.js
+//NoSQL Databases and MONGOdb
+//NoSQL: alternative to SQL databases, store documents (JSON) in a database, instead of tables with rows and columns 
+//Works really well with javascript (and Node.js)
+//mlab: database that is stored in the cloud 
 var express = require('express');
 var todoController = require('./Controllers/todoController');
 
@@ -11,7 +13,6 @@ app.set('view engine', 'ejs');
 
 
 //static files 
-//app.use(express.static('./Todo-list'));
 app.use('/assets', express.static('assets'));   //middleware
 
 
